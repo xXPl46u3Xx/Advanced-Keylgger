@@ -35,5 +35,6 @@ Receive scheduled email reports with valuable insights.
 
 Feel free to report issues or contribute via GitHub.
 Suggestions and feedback are always welcome!
+
 👩‍💻 Developed by xXPL46U3Xx
 
