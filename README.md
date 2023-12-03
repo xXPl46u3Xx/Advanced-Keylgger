@@ -21,6 +21,8 @@
 - Scheduled Email Reports: Send detailed reports via email at scheduled intervals.
   
 - Secure and Efficient: Implementing secure coding practices and efficient Python libraries.
+
+- Localhost: New localhost the view Live camera, stats and live keystrokes.
   
 
 🔧 Usage:
