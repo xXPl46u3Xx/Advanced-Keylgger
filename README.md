@@ -1,4 +1,4 @@
-⚠️ Disclaimer: Use responsibly. The developer is not liable for any misuse of this tool.
+⚠️ Disclaimer: Use responsibly. The developer (pl46u3) is not liable for any misuse of this tool.
 
 🔒 KeyLogger Secure v1.0
 
